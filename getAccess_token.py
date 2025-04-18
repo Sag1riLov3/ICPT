@@ -15,6 +15,15 @@ def main():
     }
 
     response = requests.request("POST", url, headers=headers, data=payload)
+    try:
+        response_data = response.json()
+        if 'access_token' in response_data:
+            access_token = ''.join(response_data['access_token'])
+            print(f"access_token: {access_token}")
+        else:
+            print("响应中未包含 'access_token' 字段。")
+    except json.JSONDecodeError:
+        print("无法将响应内容解析为JSON格式。")
 
     print(response.text)
 
