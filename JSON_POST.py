@@ -10,7 +10,7 @@ SECRET_KEY = "O1FIbOi0OYLDMKlcBDAw9JcXKNmasrU7"
 
 def main():
     url = "https://vop.baidu.com/server_api"
-    path = r"C:\Users\22343\Desktop\16k.wav"
+    path = r"C:\Users\22343\Desktop\ICPT\16k.wav"
     # speech 可以通过 get_file_content_as_base64("C:\fakepath\16k.wav",False) 方法获取
     payload = json.dumps({
         "format": "pcm",
